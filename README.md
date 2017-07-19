@@ -65,4 +65,4 @@ module: {
 
 ## Help
 
-Ran into a bug or just have a question? [Make an issue!](https://github.com/odensc/css-loader-minify-class/issues)
+Ran into a bug or just have a question? [Create a new issue!](https://github.com/odensc/css-loader-minify-class/issues)
