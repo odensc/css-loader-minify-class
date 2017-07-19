@@ -1,3 +1,5 @@
+"use strict";
+
 const createMinifier = require("../");
 const Minifier = createMinifier.Minifier;
 
