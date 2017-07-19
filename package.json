@@ -1,0 +1,32 @@
+{
+  "name": "css-loader-minify-class",
+  "version": "1.0.0",
+  "description": "Minify class names when using CSS Modules with css-loader.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odensc/css-loader-minify-class.git"
+  },
+  "keywords": [
+    "css",
+    "loader",
+    "webpack",
+    "minify",
+    "class"
+  ],
+  "author": "Oden <hello@odensc.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/odensc/css-loader-minify-class/issues"
+  },
+  "homepage": "https://github.com/odensc/css-loader-minify-class#readme",
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
+}
