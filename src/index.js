@@ -13,11 +13,12 @@ class Minifier {
 	}
 
 	getNextIdent(key) {
+		const { idents, indexes } = this;
 		const usedIdents = Array.from(this.idents.values());
 		let ident = "";
 
 		do {
-			ident = this.indexes
+			ident = indexes
 				.map((i, arrIndex) => {
 					// Limit the index for allowedCharactersFirst to it's maximum index.
 					const maxIndexFirst = Math.min(i, allowedCharactersFirst.length - 1);
@@ -26,19 +27,19 @@ class Minifier {
 				})
 				.join("");
 
-			let i = this.indexes.length;
+			let i = indexes.length;
 			while (i--) {
-				this.indexes[i] += 1;
+				indexes[i] += 1;
 
-				if (this.indexes[i] === allowedCharactersAfter.length) {
-					this.indexes[i] = 0;
+				if (indexes[i] === allowedCharactersAfter.length) {
+					indexes[i] = 0;
 
-					if (i === 0) this.indexes.push(0);
+					if (i === 0) indexes.push(0);
 				} else break;
 			}
 		} while (usedIdents.includes(ident));
 
-		this.idents.set(key, ident);
+		idents.set(key, ident);
 		return ident;
 	}
 

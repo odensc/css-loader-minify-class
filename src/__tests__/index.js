@@ -1,7 +1,7 @@
 "use strict";
 
 const createMinifier = require("../");
-const Minifier = createMinifier.Minifier;
+const { Minifier } = createMinifier;
 
 describe("Minifier", () => {
 	let min;
