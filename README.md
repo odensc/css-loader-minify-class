@@ -1,6 +1,6 @@
 # css-loader-minify-class
 
-*Just want to use it? [Click here.](https://github.com/odensc/css-loader-minify-class#usage)*
+*Just want to use it? [Click here.](#usage)*
 
 Minify class names when using CSS Modules with css-loader.
 
