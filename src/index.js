@@ -4,7 +4,10 @@ const allowedCharactersFirst = "abcdefhijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVW
 const allowedCharactersAfter = allowedCharactersFirst + "0123456789-_";
 
 class Minifier {
-	constructor() {
+	constructor(options = {}) {
+		options.blacklist = options.blacklist || ["ad"];
+		this.options = options;
+
 		this.idents = new Map();
 		this.indexes = [0];
 
@@ -14,6 +17,7 @@ class Minifier {
 
 	getNextIdent(key) {
 		const { idents, indexes } = this;
+		const { blacklist } = this.options;
 		const usedIdents = Array.from(this.idents.values());
 		let ident = "";
 
@@ -37,7 +41,7 @@ class Minifier {
 					if (i === 0) indexes.push(0);
 				} else break;
 			}
-		} while (usedIdents.includes(ident));
+		} while (usedIdents.includes(ident) || blacklist.includes(ident));
 
 		idents.set(key, ident);
 		return ident;
@@ -50,7 +54,7 @@ class Minifier {
 	}
 }
 
-const createMinifier = () => new Minifier().getLocalIdent;
+const createMinifier = (options) => new Minifier(options).getLocalIdent;
 
 module.exports = createMinifier;
 module.exports.Minifier = Minifier;
