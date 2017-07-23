@@ -60,9 +60,9 @@ module.exports = {
         options: {
           // development class name here
           localIdentName: "[name]_[local]-[hash:2]",
-          // minimize css and class names in production
-          minimize: process.env.NODE_ENV === "production",
-          getLocalIdent: (process.env.NODE_ENV === "production") ? createMinifier() : undefined
+          // these should only be in your production config
+          minimize: true,
+          getLocalIdent: createMinifier()
         }
       },
 
