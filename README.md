@@ -58,6 +58,8 @@ module.exports = {
       {
         loader: "css-loader",
         options: {
+          // make sure to add this
+          ident: "css",
           // development class name here
           localIdentName: "[name]_[local]-[hash:2]",
           // these should only be in your production config
