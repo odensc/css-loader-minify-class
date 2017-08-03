@@ -90,7 +90,9 @@ Returns a function.
 
 Any options can be passed to `createMinifier` as an object.
 
-* **blacklist**: An array of class names to be skipped. (default: ["ad"])
+* **blacklist**
+	* An array of `RegExp | string`. If a class name includes/matches any of them, it will be skipped.
+	* *default: [/^ad$/]* - to prevent confusing adblockers
 
 ## Help
 

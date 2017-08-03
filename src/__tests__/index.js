@@ -40,7 +40,7 @@ describe("Minifier", () => {
 
 	describe("getNextIdent", () => {
 		it("shouldn't return any names that are in the blacklist", () => {
-			min = new Minifier({ blacklist: ["a", "b"] });
+			min = new Minifier({ blacklist: [/^a$/, "b"] });
 			const names = [];
 			for (let i = 0; i < 3; i++) {
 				names.push(min.getNextIdent(i));

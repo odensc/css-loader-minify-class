@@ -5,7 +5,7 @@ const allowedCharactersAfter = allowedCharactersFirst + "0123456789-_";
 
 class Minifier {
 	constructor(options = {}) {
-		options.blacklist = options.blacklist || ["ad"];
+		options.blacklist = options.blacklist || [/^ad$/];
 		this.options = options;
 
 		this.idents = new Map();
@@ -41,7 +41,7 @@ class Minifier {
 					if (i === 0) indexes.push(0);
 				} else break;
 			}
-		} while (usedIdents.includes(ident) || blacklist.includes(ident));
+		} while (usedIdents.includes(ident) || blacklist.some(regex => ident.match(regex)));
 
 		idents.set(key, ident);
 		return ident;
