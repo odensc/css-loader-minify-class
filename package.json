@@ -1,6 +1,6 @@
 {
   "name": "css-loader-minify-class",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Minify class names when using CSS Modules with css-loader.",
   "main": "src/index.js",
   "scripts": {
