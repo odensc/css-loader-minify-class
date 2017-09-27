@@ -48,14 +48,11 @@ class Minifier {
 	}
 
 	getLocalIdent(context, _, localName) {
-		const { prefix } = this.options;
+		const prefix = this.options.prefix || "";
 		const key = [context.resourcePath, localName].join("-");
-
 		const ident = this.idents.get(key) || this.getNextIdent(key);
-		if (prefix) {
-			return prefix + ident;
-		}
-		return ident;
+
+		return prefix + ident;
 	}
 }
 

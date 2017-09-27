@@ -38,8 +38,7 @@ describe("Minifier", () => {
 		});
 
 		it("should return a prefixed name", () => {
-			const options = { prefix: ["menu_"], blacklist: ["en"] };
-			min = new Minifier(options);
+			min = new Minifier({ prefix: ["menu_"] });
 			expect(min.getLocalIdent({ resourcePath: "test" }, null, "test1")).toEqual("menu_a");
 			expect(min.getLocalIdent({ resourcePath: "test" }, null, "test2")).toEqual("menu_b");
 		});
