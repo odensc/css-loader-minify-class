@@ -1,17 +1,17 @@
 # css-loader-minify-class
 
-* [Usage](#usage)
-* [API](#api)
-* [Options](#options)
-* [Help](#help)
+-   [Usage](#usage)
+-   [API](#api)
+-   [Options](#options)
+-   [Help](#help)
 
-*Just want to use it? [Click here.](#usage)*
+_Just want to use it? [Click here.](#usage)_
 
 ---
 
 Minify class names when using CSS Modules with css-loader.
 
-(best paired with `minimize: true`)
+(best when paired with `minimize: true`)
 
 **What does it do again?**
 
@@ -21,12 +21,12 @@ Or, you could say it turns this:
 
 ```css
 .container {
-    display: flex;
-    height: 100vh;
+	display: flex;
+	height: 100vh;
 }
 
 .button {
-    border-radius: 2px;
+	border-radius: 2px;
 }
 ```
 
@@ -34,12 +34,12 @@ Into this:
 
 ```css
 .a {
-    display: flex;
-    height: 100vh;
+	display: flex;
+	height: 100vh;
 }
 
 .b {
-    border-radius: 2px;
+	border-radius: 2px;
 }
 ```
 
@@ -90,12 +90,12 @@ Returns a function.
 
 Any options can be passed to `createMinifier` as an object.
 
-* **blacklist**
-	* An array of `RegExp | string`. If a class name includes/matches any of them, it will be skipped.
-	* *default: [/^ad$/]* - to prevent confusing adblockers
-* **prefix**
-	* A prefix to prepend to every class name. For example, `menu_`.
-	* *default: undefined*
+-   **blacklist**
+    _ An array of `RegExp | string`. If a class name matches/includes any of them, it will be skipped.
+    _ _default: [/^ad$/]_ - to prevent confusing adblockers
+-   **prefix**
+    _ A prefix to prepend to every class name. For example, `menu_`.
+    _ _default: undefined_
 
 ## Help
 
